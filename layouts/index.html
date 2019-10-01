@@ -2,5 +2,19 @@
 <h1><code>[DEBUG] Index</code></h1>
 
 <h1>{{ .Title }}</h1>
-<p>{{ .Site.Params.homeText | markdownify }}</p>
+
+{{ range .Paginator.Pages }}
+  <div class="post">
+    <h2 class="post__title">
+      <a href="{{ .Permalink }}">{{ .Title }}</a>
+    </h2>
+    <div class="post__summary">
+      {{ .Summary }}
+    </div>
+  </div>
+{{ end }}
+
+{{/* Paginator */}}
+{{ partial "pagination" . }}
+
 {{ end }}

@@ -1,25 +1,21 @@
 baseURL = "https://archivedchaos.com/"
 languageCode = "en-us"
 title = "Archived Chaos"
+paginate = 10
 
 [menu]
   [[menu.main]]
     name = "Home"
     url = "/"
-    weight = 1
   [[menu.main]]
     name = "Posts"
     url = "/posts/"
-    weight = 2
   [[menu.main]]
     name = "Tags"
     url = "/tags/"
-    weight = 3
 
 [params]
   dateFormat = "January 2, 2006 - 3:04PM MST"
-  homeText = "You just made a Hugo blog from scratch."
 
 [taxonomies]
   tag = "tags"
-
