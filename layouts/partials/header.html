@@ -3,7 +3,7 @@
   <div class="Header-container Container">
 
     {{/* Mobile menu icon */}}
-    <div class="Header-menuIcon">
+    <div class="Header-menuIcon" id="header-menu-icon" aria-role="button" tabindex="0">
       <span data-feather="menu"></span>
     </div>
 
@@ -29,7 +29,9 @@
     <nav class="Header-mobile">
       {{/* Close control */}}
       <div class="Header-mobile-closeGutter">
-        <span data-feather="x"></span>
+        <div class="Header-mobile-closeIcon" id="header-mobile-close-icon" aria-role="button" tabindex="0">
+          <span data-feather="x"></span>
+        </div>
       </div>
 
       {{/* Scrollable frame */}}
@@ -50,6 +52,6 @@
     </nav>
 
     {{/* Click-absorber, behind menu */}}
-    <div class="Header-mobile-invisibilityCloak"></div>
+    <div class="Header-mobile-invisibilityCloak" id="header-mobile-click-absorber"></div>
   </div>
 </header>

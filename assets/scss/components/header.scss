@@ -119,11 +119,21 @@
 
 .Header-mobile-closeGutter {
   height: $header-height;
+  position: relative;
+}
+
+.Header-mobile-closeIcon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 64px;
+  height: 100%;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
   padding-right: $m * 2;
+  cursor: pointer;
 }
 
 .Header-mobile-scrollable {
