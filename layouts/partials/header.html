@@ -2,6 +2,7 @@
   {{ $currentPage := . }}
   <div class="Header-container Container">
 
+    {{/* Mobile menu icon */}}
     <div class="Header-menuIcon">
       <span data-feather="menu"></span>
     </div>
@@ -9,36 +10,46 @@
     {{/* Brand title */}}
     <a href="/" class="Header-brand">{{ .Site.Params.brand }}</a>
 
+    {{/* Desktop nav items */}}
     <nav class="Header-desktop">
       <ul class="Header-desktop-list">
         {{ range .Site.Menus.main }}
-        <li>
-          {{ $isPageActive := $currentPage.IsMenuCurrent "main" . }}
-          <a class="Header-desktop-link {{ if $isPageActive }}is-active{{ end }}" {{ if not $isPageActive }}href="{{ .URL }}"{{ end }}>{{ .Name }}</a>
-        </li>
+          <li>
+            {{ $isPageActive := $currentPage.IsMenuCurrent "main" . }}
+            <a class="Header-desktop-link {{ if $isPageActive }}is-active{{ end }}" {{ if not $isPageActive }}href="{{ .URL }}"{{ end }}>{{ .Name }}</a>
+          </li>
         {{ end }}
       </ul>
     </nav>
   </div>
 
-  <div class="Head-mobileContainer is-open" id="header-mobile-container">
+  {{/* Mobile menu (container) */}}
+  <div class="Head-mobileContainer" id="header-mobile-container">
+    {{/* Mobile nav */}}
     <nav class="Header-mobile">
+      {{/* Close control */}}
       <div class="Header-mobile-closeGutter">
         <span data-feather="x"></span>
       </div>
 
+      {{/* Scrollable frame */}}
       <div class="Header-mobile-scrollable">
+        {{/* Nav items */}}
         <ul class="Header-mobile-list">
-          {{ range .Site.Menus.main }}
           <li class="Header-mobile-listItem">
-            {{ $isPageActive := $currentPage.IsMenuCurrent "main" . }}
-            <a class="Header-mobile-link {{ if $isPageActive }}is-active{{ end }}" {{ if not $isPageActive }}href="{{ .URL }}"{{ end }}>{{ .Name }}</a>
+            <a class="Header-mobile-link" href="/">Home</a>
           </li>
+          {{ range .Site.Menus.main }}
+            <li class="Header-mobile-listItem">
+              {{ $isPageActive := $currentPage.IsMenuCurrent "main" . }}
+              <a class="Header-mobile-link {{ if $isPageActive }}is-active{{ end }}" {{ if not $isPageActive }}href="{{ .URL }}"{{ end }}>{{ .Name }}</a>
+            </li>
           {{ end }}
         </ul>
       </div>
     </nav>
 
+    {{/* Click-absorber, behind menu */}}
     <div class="Header-mobile-invisibilityCloak"></div>
   </div>
 </header>
