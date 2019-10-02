@@ -5,17 +5,18 @@ paginate = 10
 
 [menu]
   [[menu.main]]
-    name = "Home"
-    url = "/"
-  [[menu.main]]
-    name = "Posts"
-    url = "/posts/"
+    name = "About"
+    url = "/about/"
   [[menu.main]]
     name = "Tags"
     url = "/tags/"
+  [[menu.main]]
+    name = "Archive"
+    url = "/archive/"
 
 [params]
   dateFormat = "January 2, 2006 - 3:04PM MST"
+  brand = "Archived Chaos"
 
 [taxonomies]
   tag = "tags"

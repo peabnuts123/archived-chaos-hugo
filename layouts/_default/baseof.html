@@ -3,5 +3,12 @@
 <body>
     {{ partial "header.html" . }}
     {{ block "main" . }}{{ end }}
+
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+
+    <script type="text/javascript">
+      feather.replace();
+    </script>
 </body>
 </html>

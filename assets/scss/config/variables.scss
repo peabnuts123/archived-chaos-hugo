@@ -1,0 +1,43 @@
+
+// Colors
+$purple: #2D173D;
+$pink: #FF98B7;
+$orange: #FFAA00;
+$blue: #5FB2FF;
+
+$merlot: #AA2447;
+$grapefruit: #FF6F5E;
+$lemonade: #fff9e9;
+$teal: #40BFC1;
+
+// Greys
+$black: #000000;
+$grey-dark:  #4a4a4a;
+$grey-medium:   #B0B0B0;
+$grey-light: #F3F1F1;
+$white:      #FFFFFF;
+
+// Aliases
+$text: rgba($black, 0.9);
+$header-text: $lemonade;
+$primary: $grapefruit;
+$secondary: $teal;
+$link: $teal;
+$selection: rgba($teal, 0.5);
+$border: $grey-light;
+
+// Breakpoints
+$breakpoint-mobile: 768px;
+$breakpoint-tablet: 1024px;
+$breakpoint-laptop: 1280px;
+$breakpoint-desktop: 1600px;
+
+// Margin and padding
+$m: 10px;
+
+// Branding
+$radius: 5px;
+
+// Header
+$header-height: 50px;
+$header-z-index: 10;

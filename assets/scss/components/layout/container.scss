@@ -1,0 +1,22 @@
+.Container {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $m;
+  padding-right: $m;
+  // background-color: $lemonade;
+
+  @include media-query('tablet') {
+    width: $breakpoint-mobile;
+    padding-left: $m * 2;
+    padding-right: $m * 2;
+  }
+  @include media-query('laptop') { width: $breakpoint-tablet; }
+  @include media-query('desktop') { width: $breakpoint-laptop; }
+  @include media-query('widescreen') { width: $breakpoint-desktop; }
+}
+
+.Container--noPadding {
+  padding-left: 0;
+  padding-right: 0;
+}

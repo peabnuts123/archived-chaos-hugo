@@ -1,11 +1,44 @@
-<header>
-  <nav>
-    <ul>
-      {{ range .Site.Menus.main }}
+<header class="Header">
+  {{ $currentPage := . }}
+  <div class="Header-container Container">
+
+    <div class="Header-menuIcon">
+      <span data-feather="menu"></span>
+    </div>
+
+    {{/* Brand title */}}
+    <a href="/" class="Header-brand">{{ .Site.Params.brand }}</a>
+
+    <nav class="Header-desktop">
+      <ul class="Header-desktop-list">
+        {{ range .Site.Menus.main }}
         <li>
-          <a href="{{ .URL }}">{{ .Name }}</a>
+          {{ $isPageActive := $currentPage.IsMenuCurrent "main" . }}
+          <a class="Header-desktop-link {{ if $isPageActive }}is-active{{ end }}" {{ if not $isPageActive }}href="{{ .URL }}"{{ end }}>{{ .Name }}</a>
         </li>
-      {{ end }}
-    </ul>
-  </nav>
+        {{ end }}
+      </ul>
+    </nav>
+  </div>
+
+  <div class="Head-mobileContainer is-open" id="header-mobile-container">
+    <nav class="Header-mobile">
+      <div class="Header-mobile-closeGutter">
+        <span data-feather="x"></span>
+      </div>
+
+      <div class="Header-mobile-scrollable">
+        <ul class="Header-mobile-list">
+          {{ range .Site.Menus.main }}
+          <li class="Header-mobile-listItem">
+            {{ $isPageActive := $currentPage.IsMenuCurrent "main" . }}
+            <a class="Header-mobile-link {{ if $isPageActive }}is-active{{ end }}" {{ if not $isPageActive }}href="{{ .URL }}"{{ end }}>{{ .Name }}</a>
+          </li>
+          {{ end }}
+        </ul>
+      </div>
+    </nav>
+
+    <div class="Header-mobile-invisibilityCloak"></div>
+  </div>
 </header>

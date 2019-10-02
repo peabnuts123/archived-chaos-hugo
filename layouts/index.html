@@ -1,20 +1,20 @@
 {{ define "main" }}
-<h1><code>[DEBUG] Index</code></h1>
+<pre><code>[DEBUG] Index</code></pre>
 
-<h1>{{ .Title }}</h1>
-
-{{ range .Paginator.Pages }}
-  <div class="post">
-    <h2 class="post__title">
-      <a href="{{ .Permalink }}">{{ .Title }}</a>
-    </h2>
-    <div class="post__summary">
-      {{ .Summary }}
+<div class="Container">
+  {{ range .Paginator.Pages }}
+    <div class="post">
+      <h2 class="post__title">
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+      </h2>
+      <div class="post__summary">
+        {{ .Summary }}
+      </div>
     </div>
-  </div>
-{{ end }}
+  {{ end }}
 
-{{/* Paginator */}}
-{{ partial "pagination" . }}
+  {{/* Paginator */}}
+  {{ partial "pagination" . }}
+</div>
 
 {{ end }}

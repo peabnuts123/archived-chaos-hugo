@@ -1,0 +1,22 @@
+{
+  "name": "hugo",
+  "version": "1.0.0",
+  "description": "Static site created using [Hugo](https://gohugo.io/) to power my blog, [Archived Chaos](https://archivedchaos.com).",
+  "main": "index.js",
+  "private": true,
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/peabnuts123/archived-chaos-hugo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/peabnuts123/archived-chaos-hugo/issues"
+  },
+  "homepage": "https://github.com/peabnuts123/archived-chaos-hugo#readme",
+  "dependencies": {
+    "normalize.css": "^8.0.1"
+  }
+}
