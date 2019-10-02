@@ -1,4 +1,4 @@
-baseURL = "https://archivedchaos.com/"
+relativeurls = true
 languageCode = "en-us"
 title = "Archived Chaos"
 paginate = 10
