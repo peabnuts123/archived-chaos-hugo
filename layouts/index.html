@@ -2,7 +2,8 @@
 <pre><code>[DEBUG] Index</code></pre>
 
 <div class="Container">
-  {{ range .Paginator.Pages }}
+  {{/* Page of posts */}}
+  {{ range where .Site.RegularPages "Section" "posts"  }}
     <div class="post">
       <h2 class="post__title">
         <a href="{{ .Permalink }}">{{ .Title }}</a>

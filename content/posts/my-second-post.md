@@ -6,6 +6,7 @@ tags:
   - "lorem ipsum"
   - "second post"
 draft: true
+type: post
 ---
 
 # My second post

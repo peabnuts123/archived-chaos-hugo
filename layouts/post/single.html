@@ -1,0 +1,12 @@
+{{ define "main" }}
+
+<pre><code>[DEBUG] Post single</code></pre>
+
+<div class="Container">
+  <h1>{{ .Title }}</h1>
+  {{ partial "date-and-tags.html" . }}
+
+  {{ .Content }}
+</div>
+
+{{ end }}

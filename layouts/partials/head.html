@@ -1,12 +1,15 @@
 <head>
+  {{/* Meta tags */}}
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+  {{/* Style sheets */}}
   {{ $cssOptions := (dict "outputStyle" "compressed" "enableSourceMap" true "includePaths" (slice "node_modules/normalize.css"))}}
   {{ $style := resources.Get "scss/index.scss" | resources.ToCSS $cssOptions | resources.Minify | resources.Fingerprint }}
   <link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}">
 
+  {{/* Document title */}}
   {{ if .IsHome }}
     <title>{{ .Site.Title }}</title>
   {{ else }}

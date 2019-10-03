@@ -1,20 +1,22 @@
 <html lang="en">
 {{ partial "head.html" . }}
 <body>
-    {{ partial "header.html" . }}
-    {{ block "main" . }}{{ end }}
+  {{/* Header */}}
+  {{ partial "header.html" . }}
 
-    {{/* Vendor libraries */}}
-    <script src="https://unpkg.com/feather-icons@4.24.1/dist/feather.min.js" integrity="sha384-EbSscX4STvYAC/DxHse8z5gEDaNiKAIGW+EpfzYTfQrgIlHywXXrM9SUIZ0BlyfF" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  {{/* Page content */}}
+  {{ block "main" . }}{{ end }}
 
-    {{/* Custom scripts */}}
-    {{ $js_header := resources.Get "js/header.js" }}
-    {{ $js := slice $js_header | resources.Concat "js/index.js" | resources.Minify | resources.Fingerprint }}
+  {{/* Vendor libraries */}}
+  <script src="https://unpkg.com/feather-icons@4.24.1/dist/feather.min.js" integrity="sha384-EbSscX4STvYAC/DxHse8z5gEDaNiKAIGW+EpfzYTfQrgIlHywXXrM9SUIZ0BlyfF" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 
-    <script type="text/javascript" src="{{ $js.Permalink }}" integrity="{{ $js.Data.Integrity }}"></script>
-    <script type="text/javascript">
-      feather.replace();
-    </script>
+  {{/* Custom scripts */}}
+  {{ $js_header := resources.Get "js/header.js" }}
+  {{ $js := slice $js_header | resources.Concat "js/index.js" | resources.Minify | resources.Fingerprint }}
+  <script type="text/javascript" src="{{ $js.Permalink }}" integrity="{{ $js.Data.Integrity }}"></script>
+  <script type="text/javascript">
+    feather.replace();
+  </script>
 </body>
 </html>

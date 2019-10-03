@@ -6,6 +6,7 @@ tags:
   - "lorem ipsum"
   - "first post"
 draft: true
+type: post
 ---
 
 # Hello world

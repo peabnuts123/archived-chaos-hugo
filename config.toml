@@ -2,6 +2,7 @@ relativeurls = true
 languageCode = "en-us"
 title = "Archived Chaos"
 paginate = 10
+disableKinds = [ "section" ]
 
 [menu]
   [[menu.main]]

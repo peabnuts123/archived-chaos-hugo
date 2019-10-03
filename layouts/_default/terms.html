@@ -2,14 +2,18 @@
 
 <pre><code>[DEBUG] Terms</code></pre>
 
-<h1>{{ .Title }}</h1>
+<div class="Container">
+  {{/* Title */}}
+  <h1>{{ .Title }} [TODO]</h1>
 
-{{ range .Data.Terms.ByCount }}
-  <p>
-    <a href="{{ .Page.Permalink }}">
-      <span>{{ .Count }}</span> {{ .Page.Title }}
-    </a>
-  </p>
-{{ end }}
+  {{/* Terms */}}
+  {{ range .Data.Terms.ByCount }}
+    <p>
+      <a href="{{ .Page.Permalink }}">
+        <span>{{ .Count }}</span> {{ .Page.Title }}
+      </a>
+    </p>
+  {{ end }}
+</div>
 
 {{ end }}

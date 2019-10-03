@@ -1,9 +1,9 @@
-<!-- Post time -->
+{{/* Post time */}}
 {{ $dateTime := .PublishDate.Format "2006-01-02T15:04:05-0700" }}
 {{ $formattedDate :=  .PublishDate.Format .Site.Params.dateFormat }}
 <span>Posted <time datetime="{{ $dateTime }}">{{ $formattedDate }}</time></span>
 
-<!-- Post tags -->
+{{/* Post tags */}}
 <ul>
   {{ range .Params.tags }}
     <li>
