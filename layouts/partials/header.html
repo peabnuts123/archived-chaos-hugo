@@ -15,7 +15,7 @@
       <ul class="Header-desktop-list">
         {{ range .Site.Menus.main }}
           <li>
-            {{ $isPageActive := hasPrefix $currentPage.URL .URL }}
+            {{ $isPageActive := hasPrefix $currentPage.RelPermalink .URL }}
             <a class="Header-desktop-link {{ if $isPageActive }}is-active{{ end }}" href="{{ .URL }}">{{ .Name }}</a>
           </li>
         {{ end }}
@@ -43,7 +43,7 @@
           </li>
           {{ range .Site.Menus.main }}
             <li class="Header-mobile-listItem">
-              {{ $isPageActive := hasPrefix $currentPage.URL .URL }}
+              {{ $isPageActive := hasPrefix $currentPage.RelPermalink .URL }}
               <a class="Header-mobile-link {{ if $isPageActive }}is-active{{ end }}" href="{{ .URL }}">{{ .Name }}</a>
             </li>
           {{ end }}
