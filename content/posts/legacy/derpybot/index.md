@@ -4,7 +4,6 @@ date = 2019-10-06T10:33:10+13:00
 type = "post"
 tags = ["Java", "Legacy posts"]
 # Optional
-draft = true
 heroImage = "chatting.png"
 heroImageAlt = "Screenshot of Minecraft with a bot user chatting and replying to players"
 disclaimer = "This post was originally written sometime between 2012-2014."
