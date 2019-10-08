@@ -1,0 +1,4 @@
+{{/* Resolve a resource relative to a page bundle as a URL relative to the site root */}}
+{{/* Why this isn't built-in, I do not know ... */}}
+{{- $resource := $.Page.Resources.GetMatch (.Get 0) -}}
+{{- $resource.RelPermalink -}}
