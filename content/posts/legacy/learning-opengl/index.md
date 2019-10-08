@@ -2,12 +2,11 @@
 title = "Learning OpenGL (2012)"
 date = 2019-10-09T07:26:46+13:00
 type = "post"
-tags = ["Java", "Graphics", "Procedural"]
+tags = ["Java", "Graphics", "Procedural", "Legacy posts"]
 # Optional
-draft = true
 heroImage = "hue_circle.jpeg"
 heroImageAlt = "Screenshot of a circle coloured to all the different hues around the edge. Source code visible in the background"
-disclaimer = ""
+disclaimer = "This post was originally written sometime between 2012-2014."
 +++
 
 In University I took a paper on Computer Graphics which covered OpenGL as well as some 2D image filtering concepts. After I finished the paper I started to prod OpenGL in my own time.

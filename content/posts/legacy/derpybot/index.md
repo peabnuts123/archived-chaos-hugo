@@ -2,7 +2,7 @@
 title = "Derpybot (2011)"
 date = 2019-10-06T10:33:10+13:00
 type = "post"
-tags = ["Java", "Legacy"]
+tags = ["Java", "Legacy posts"]
 # Optional
 draft = true
 heroImage = "chatting.png"

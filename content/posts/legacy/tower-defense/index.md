@@ -1,7 +1,7 @@
 +++
 title = "Tower Defense (2010)"
 date = 2019-10-04T09:27:56+13:00
-tags = ["Java", "Procedural", "Legacy"]
+tags = ["Java", "Procedural", "Legacy posts"]
 draft = true
 type = "post"
 heroImage = "splash_screen.png"
