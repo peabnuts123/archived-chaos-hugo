@@ -9,8 +9,8 @@ draft: true
 type: post
 ---
 
-# Hello world
-
 This is my first post n stuff.
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum et quasi perspiciatis saepe voluptatum molestiae nostrum distinctio eveniet in neque!
+
+<!--more-->
