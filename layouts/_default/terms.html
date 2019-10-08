@@ -9,7 +9,7 @@
   {{/* Terms */}}
   {{ range .Data.Terms.ByCount }}
     <p>
-      <a href="{{ .Page.Permalink }}">
+      <a href="{{ .Page.RelPermalink }}">
         <span>{{ .Count }}</span> {{ .Page.Title }}
       </a>
     </p>

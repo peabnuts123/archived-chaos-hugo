@@ -14,7 +14,7 @@
   {{/* Custom scripts */}}
   {{ $js_header := resources.Get "js/header.js" }}
   {{ $js := slice $js_header | resources.Concat "js/index.js" | resources.Minify | resources.Fingerprint }}
-  <script type="text/javascript" src="{{ $js.Permalink }}" integrity="{{ $js.Data.Integrity }}"></script>
+  <script type="text/javascript" src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}"></script>
   <script type="text/javascript">
     feather.replace();
   </script>
