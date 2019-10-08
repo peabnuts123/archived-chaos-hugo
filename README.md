@@ -11,6 +11,7 @@ Static site created using [Hugo](https://gohugo.io/) to power my blog, [Archived
   * [ ] About page
   * [ ] Archive section
   * [ ] Click on images to view full screen
+  * [ ] Gallery system via front matter
 
 ## References / Sources
   * Amazing post on how to actually make a Hugo site yourself [here](https://zwbetz.com/make-a-hugo-blog-from-scratch/#create-the-site).
