@@ -1,6 +1,9 @@
 $button-height: 40px;
 
 .Button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   background-color: $primary;
   color: $secondary;
   border-radius: $radius;
@@ -13,11 +16,17 @@ $button-height: 40px;
   border: none;
 
   &:hover {
+    color: $secondary;
     background-color: darken($primary, 5%);
   }
 
   &:active {
+    color: $secondary;
     background-color: darken($primary, 10%);
+  }
+
+  &:focus {
+    color: $secondary;
   }
 }
 
@@ -26,10 +35,16 @@ $button-height: 40px;
   color: $primary;
 
   &:hover {
+    color: $primary;
     background-color: darken($secondary, 5%);
   }
 
   &:active {
+    color: $primary;
     background-color: darken($secondary, 10%);
+  }
+
+  &:focus {
+    color: $primary;
   }
 }

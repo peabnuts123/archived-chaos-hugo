@@ -16,7 +16,7 @@ disableKinds = [ "section" ]
     url = "/archive/"
 
 [params]
-  dateFormat = "January 2, 2006 - 3:04PM MST"
+  dateFormat = "January 2, 2006"
   brand = "Archived Chaos"
 
 [taxonomies]

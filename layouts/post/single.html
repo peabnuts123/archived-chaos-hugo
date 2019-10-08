@@ -1,12 +1,47 @@
 {{ define "main" }}
 
-<pre><code>[DEBUG] Post single</code></pre>
+<div class="Container Container--thin u-paddingTop-md">
+  <div class="Post">
 
-<div class="Container">
-  <h1>{{ .Title }}</h1>
-  {{ partial "date-and-tags.html" . }}
+    {{/* Hero image */}}
+    {{ $heroImagePath := .Params.HeroImage }}
+    {{ if $heroImagePath }}
+      {{ $heroImage := .Resources.GetMatch $heroImagePath }}
+      {{ $heroImageAlt := .Params.HeroImageAlt }}
+      <img class="Post-heroImage" src="{{ $heroImage.RelPermalink }}" {{ if $heroImageAlt }}alt="{{ $heroImageAlt }}"{{ end }}>
+    {{ end }}
 
-  {{ .Content }}
+    <div class="Post-container">
+      {{/* Title */}}
+      <h1 class="Post-title">{{ .Title }}</h1>
+
+      {{/* Disclaimer */}}
+      {{ $disclaimerMessage := .Params.Disclaimer }}
+      {{ if $disclaimerMessage }}
+        <div class="Post-disclaimer u-marginTop-lg"><span class="Post-disclaimerNote">Note:</span> {{ $disclaimerMessage }}</div>
+      {{ end }}
+
+      {{/* Post content */}}
+      {{ .Content }}
+
+      {{/* Post date */}}
+      <div>
+        {{ $dateTime := .PublishDate.Format "2006-01-02T15:04:05-0700" }}
+        {{ $formattedDate :=  .PublishDate.Format .Site.Params.dateFormat }}
+        <a class="Post-date" href="{{ .RelPermalink }}">Posted <time datetime="{{ $dateTime }}">{{ $formattedDate }}</time></a>
+      </div>
+
+      {{/* Post tags */}}
+      <ul class="Post-tagList">
+        {{ range .Params.tags }}
+          <li class="Post-tag">
+            {{ $href := printf "/tags/%s" (urlize .) }}
+            <a href="{{ $href }}">#{{ . }}</a>
+          </li>
+        {{ end }}
+      </ul>
+    </div>
+  </div>
 </div>
 
 {{ end }}

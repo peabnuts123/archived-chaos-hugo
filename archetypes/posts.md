@@ -1,7 +1,13 @@
 +++
 title = "{{ replace .Name "-" " " | title }}"
 date = {{ .Date }}
-tags = []
-draft = true
 type = "post"
+tags = []
+# Optional
+draft = true
+heroImage = ""
+heroImageAlt = ""
+disclaimer = ""
 +++
+
+<!--more-->

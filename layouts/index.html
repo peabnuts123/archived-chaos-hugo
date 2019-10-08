@@ -1,21 +1,57 @@
 {{ define "main" }}
-<pre><code>[DEBUG] Index</code></pre>
 
-<div class="Container">
-  {{/* Page of posts */}}
-  {{ range where .Site.RegularPages "Section" "posts"  }}
-    <div class="post">
-      <h2 class="post__title">
-        <a href="{{ .Permalink }}">{{ .Title }}</a>
-      </h2>
-      <div class="post__summary">
-        {{ .Summary }}
+<div class="Container Container--thin">
+  <div class="PostList">
+    {{/* Page of posts */}}
+    {{ range where .Site.RegularPages "Section" "posts"  }}
+      <div class="Post">
+        {{/* Hero image */}}
+        {{ $heroImagePath := .Params.HeroImage }}
+        {{ if $heroImagePath }}
+          {{ $heroImage := .Resources.GetMatch $heroImagePath }}
+          {{ $heroImageAlt := .Params.HeroImageAlt }}
+          <img class="Post-heroImage" src="{{ $heroImage.RelPermalink }}" {{ if $heroImageAlt }}alt="{{ $heroImageAlt }}"{{ end }}>
+        {{ end }}
+
+        <div class="Post-container">
+          {{/* Title */}}
+          <h1 class="Post-title">
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          </h1>
+
+          {{/* Summary */}}
+          <div class="Post-summary">
+            {{ .Summary | safeHTML }}
+          </div>
+
+          {{/* Read more */}}
+          {{ if .Truncated }}
+            <a class="Post-readMore Button" href="{{ .RelPermalink }}">Read more</a>
+          {{ end }}
+
+          {{/* Post date */}}
+          <div class="u-marginTop-lg">
+            {{ $dateTime := .PublishDate.Format "2006-01-02T15:04:05-0700" }}
+            {{ $formattedDate :=  .PublishDate.Format .Site.Params.dateFormat }}
+            <a class="Post-date" href="{{ .RelPermalink }}">Posted <time datetime="{{ $dateTime }}">{{ $formattedDate }}</time></a>
+          </div>
+
+          {{/* Post tags */}}
+          <ul class="Post-tagList">
+            {{ range .Params.tags }}
+              <li class="Post-tag">
+                {{ $href := printf "/tags/%s" (urlize .) }}
+                <a href="{{ $href }}">#{{ . }}</a>
+              </li>
+            {{ end }}
+          </ul>
+        </div>
       </div>
-    </div>
-  {{ end }}
+    {{ end }}
 
-  {{/* Paginator */}}
-  {{ partial "pagination" . }}
+    {{/* Paginator */}}
+    {{ partial "pagination" . }}
+  </div>
 </div>
 
 {{ end }}

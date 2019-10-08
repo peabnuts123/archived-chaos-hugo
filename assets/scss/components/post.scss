@@ -1,0 +1,72 @@
+.Post {
+  background-color: $white;
+  margin-bottom: $m * 2;
+  border-radius: $radius;
+  box-shadow: 0 2px 8px rgba($black, 0.05);
+
+  /* Style overrides for markdown elements */
+  img:not(.Post-heroImage) {
+    border-radius: $radius;
+    width: 100%;
+
+    /* Faux margin, different at each breakpoint */
+    /* Needed for border-radius */
+    margin-left: auto;
+    margin-right: auto;
+    @include media-query('tablet') {
+      width: calc(100% - #{50px * 2});
+    }
+
+    @include media-query('laptop') {
+      width: calc(100% - #{100px * 2});
+    }
+  }
+}
+
+/* Hero image */
+.Post-heroImage {
+  width: 100%;
+  border-top-left-radius: $radius;
+  border-top-right-radius: $radius;
+}
+
+/* Container */
+.Post-container {
+  padding: $m * 1.5;
+}
+
+/* Title */
+.Post-title {
+  margin-bottom: $m / 2;
+}
+
+/* Summary */
+.Post-summary {
+  text-align: justify;
+}
+
+/* Disclaimer */
+.Post-disclaimer {
+  font-style: italic;
+  background-color: $grey-light;
+  border-radius: $radius;
+  padding: $m;
+  margin-top: $m;
+}
+.Post-disclaimerNote {
+  font-weight: bold;
+}
+
+/* Date and tags */
+.Post-date {
+  font-family: italic;
+}
+.Post-tagList {
+  padding: 0;
+  margin: 0;
+}
+.Post-tag {
+  display: inline;
+  margin-right: $m;
+  font-size: $font-size-h5;
+}

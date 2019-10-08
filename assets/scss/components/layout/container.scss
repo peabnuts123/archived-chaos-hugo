@@ -4,7 +4,6 @@
   margin-right: auto;
   padding-left: $m;
   padding-right: $m;
-  // background-color: $lemonade;
 
   @include media-query('tablet') {
     width: $breakpoint-mobile;
@@ -14,6 +13,14 @@
   @include media-query('laptop') { width: $breakpoint-tablet; }
   @include media-query('desktop') { width: $breakpoint-laptop; }
   @include media-query('widescreen') { width: $breakpoint-desktop; }
+}
+
+.Container--thin {
+  $scaleFactor: 0.7;
+  @include media-query('tablet') { width: $breakpoint-mobile * $scaleFactor; }
+  @include media-query('laptop') { width: $breakpoint-tablet * $scaleFactor; }
+  @include media-query('desktop') { width: $breakpoint-laptop * $scaleFactor; }
+  @include media-query('widescreen') { width: $breakpoint-desktop * $scaleFactor; }
 }
 
 .Container--noPadding {
